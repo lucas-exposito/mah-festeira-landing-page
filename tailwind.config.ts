@@ -47,6 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        festa: {
+          pink: "hsl(var(--festa-pink))",
+          yellow: "hsl(var(--festa-yellow))",
+          blue: "hsl(var(--festa-blue))",
+          lilac: "hsl(var(--festa-lilac))",
+          green: "hsl(var(--festa-green))",
+          orange: "hsl(var(--festa-orange))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

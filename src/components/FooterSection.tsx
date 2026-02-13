@@ -17,7 +17,7 @@ const FooterSection = () => {
             <ul className="space-y-3 text-background/70">
               <li className="flex items-center gap-2">
                 <Phone size={16} className="text-festa-green" />
-                <span>(00) 00000-0000</span>
+                <span>(11) 94080-9869</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-festa-pink" />
@@ -25,7 +25,7 @@ const FooterSection = () => {
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={16} className="text-festa-blue" />
-                <span>Sua Cidade - Estado</span>
+                <span>São Paulo - SP</span>
               </li>
             </ul>
           </div>
@@ -34,7 +34,9 @@ const FooterSection = () => {
             <h4 className="font-display text-lg font-bold mb-4">Redes Sociais</h4>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.instagram.com/mahfesteira/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary/80 transition-colors"
                 aria-label="Instagram"
               >

@@ -137,10 +137,7 @@ const PackagesSection = () => {
                 className="w-full rounded-full font-display font-semibold py-5"
                 variant={pkg.popular ? "default" : "outline"}
                 onClick={() =>
-                  window.open(
-                    `https://wa.me/5500000000000?text=${encodeURIComponent(`Olá! Tenho interesse no Pacote ${pkg.name} (${pkg.price}). Gostaria de mais informações!`)}`,
-                    "_blank"
-                  )
+                  window.open("https://bit.ly/38Dw4RG", "_blank")
                 }
               >
                 Quero este pacote

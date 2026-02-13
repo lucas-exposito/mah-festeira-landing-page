@@ -49,7 +49,7 @@ const ServicesSection = () => {
               <h3 className="font-display text-xl font-bold text-card-foreground mb-3">{service.title}</h3>
               <p className="text-muted-foreground mb-6">{service.description}</p>
               <button
-                onClick={() => window.open("https://wa.me/5500000000000?text=Olá! Gostaria de saber mais sobre " + service.title, "_blank")}
+                onClick={() => window.open("https://wa.me/5511940809869?text=Olá! Gostaria de saber mais sobre " + service.title, "_blank")}
                 className="text-primary font-display font-semibold hover:underline"
               >
                 Saiba mais →

@@ -21,7 +21,7 @@ const FooterSection = () => {
               </li>
               <li className="flex items-center gap-2">
                 <Mail size={16} className="text-festa-pink" />
-                <span>contato@mahfesteira.com.br</span>
+                <span>madinizf@hotmail.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={16} className="text-festa-blue" />
@@ -42,6 +42,7 @@ const FooterSection = () => {
               >
                 <Instagram size={20} />
               </a>
+              <span className="text-background/70 self-center">@mahfesteira</span>
             </div>
           </div>
         </div>

@@ -1,12 +1,5 @@
 import { Check, Gem, Crown, Star, Sparkles, Diamond } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import pacotePrata from "@/assets/pacote-prata.png";
-import pacoteOuro from "@/assets/pacote-ouro.png";
-import pacoteDiamante from "@/assets/pacote-diamante.png";
-import pacoteRubi from "@/assets/pacote-rubi.png";
-import pacoteCristal from "@/assets/pacote-cristal.png";
-
-const WHATSAPP = "5511940809869";
 
 const packages = [
   {
@@ -15,7 +8,6 @@ const packages = [
     color: "border-gray-400",
     iconBg: "bg-gray-200 text-gray-500",
     price: "R$ 980,00",
-    image: pacotePrata,
     items: [
       "1 mesa pequena ou Jogo de Cilindros",
       "1 Painel de tecido sublimado redondo de 1,50",
@@ -32,7 +24,6 @@ const packages = [
     color: "border-festa-yellow",
     iconBg: "bg-festa-yellow/10 text-festa-orange",
     price: "R$ 1.550,00",
-    image: pacoteOuro,
     items: [
       "1 Mesa + Jogo de Cilindros sublimados",
       "1 Painel de tecido sublimado redondo de 1,50",
@@ -52,7 +43,6 @@ const packages = [
     iconBg: "bg-festa-blue/10 text-festa-blue",
     popular: true,
     price: "R$ 1.980,00",
-    image: pacoteDiamante,
     items: [
       "1 Jogo de Mesa + Jogo de Cilindros sublimados ou acrílicos",
       "2 Painéis desconstruídos de tecido sublimado (2 a 3 metros)",
@@ -71,7 +61,6 @@ const packages = [
     color: "border-festa-pink",
     iconBg: "bg-festa-pink/10 text-festa-pink",
     price: "R$ 2.750,00",
-    image: pacoteRubi,
     items: [
       "1 Mesa e jogo de Cilindros",
       "1 Painel de tecido sublimado de 3 a 4 metros (desconstruído ou inteiro)",
@@ -90,7 +79,6 @@ const packages = [
     color: "border-primary",
     iconBg: "bg-primary/10 text-primary",
     price: "R$ 3.390,00",
-    image: pacoteCristal,
     items: [
       "1 ou 2 mesas e jogo de Cilindros (até 6)",
       "1 Painel de tecido sublimado de 4 a 6 metros (desconstruído ou inteiro)",
@@ -125,45 +113,38 @@ const PackagesSection = () => {
           {packages.map((pkg) => (
             <div
               key={pkg.name}
-              className={`relative bg-card rounded-3xl border-2 ${pkg.color} overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col ${pkg.popular ? "ring-2 ring-primary/30" : ""}`}
+              className={`relative bg-card rounded-3xl border-2 ${pkg.color} p-6 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 flex flex-col ${pkg.popular ? "ring-2 ring-primary/30" : ""}`}
             >
               {pkg.popular && (
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10 bg-primary text-primary-foreground font-display font-bold text-xs px-4 py-1.5 rounded-full whitespace-nowrap">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground font-display font-bold text-xs px-4 py-1.5 rounded-full whitespace-nowrap">
                   ⭐ Mais Popular
                 </div>
               )}
-              <img
-                src={pkg.image}
-                alt={`Pacote ${pkg.name}`}
-                className="w-full h-40 object-cover"
-              />
-              <div className="p-6 flex flex-col flex-1">
-                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl ${pkg.iconBg} mb-3`}>
-                  <pkg.icon size={24} />
-                </div>
-                <h3 className="font-display text-xl font-bold text-card-foreground mb-1">Pacote {pkg.name}</h3>
-                <p className="font-display text-2xl font-bold text-primary mb-4">{pkg.price}</p>
-                <ul className="space-y-2 mb-6 flex-1">
-                  {pkg.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
-                      <Check size={16} className="text-festa-green mt-0.5 shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  className="w-full rounded-full font-display font-semibold py-5"
-                  variant={pkg.popular ? "default" : "outline"}
-                  onClick={() =>
-                    window.open(
-                      `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(`Olá! Tenho interesse no Pacote ${pkg.name} (${pkg.price}). Gostaria de mais informações!`)}`,
-                      "_blank"
-                    )
-                  }
-                >
-                  Quero este pacote
-                </Button>
+              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-2xl ${pkg.iconBg} mb-3`}>
+                <pkg.icon size={24} />
               </div>
+              <h3 className="font-display text-xl font-bold text-card-foreground mb-1">Pacote {pkg.name}</h3>
+              <p className="font-display text-2xl font-bold text-primary mb-4">{pkg.price}</p>
+              <ul className="space-y-2 mb-6 flex-1">
+                {pkg.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-muted-foreground text-sm">
+                    <Check size={16} className="text-festa-green mt-0.5 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Button
+                className="w-full rounded-full font-display font-semibold py-5"
+                variant={pkg.popular ? "default" : "outline"}
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/5500000000000?text=${encodeURIComponent(`Olá! Tenho interesse no Pacote ${pkg.name} (${pkg.price}). Gostaria de mais informações!`)}`,
+                    "_blank"
+                  )
+                }
+              >
+                Quero este pacote
+              </Button>
             </div>
           ))}
         </div>

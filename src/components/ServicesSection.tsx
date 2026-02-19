@@ -1,4 +1,5 @@
 import { Baby, Cake, PartyPopper } from "lucide-react";
+import { AnimatedSection, AnimatedCard } from "@/components/AnimatedSection";
 
 const services = [
   {
@@ -28,33 +29,34 @@ const ServicesSection = () => {
   return (
     <section id="servicos" className="py-20 px-4 bg-muted/50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Nossos <span className="text-primary">Serviços</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Oferecemos decorações completas para todos os tipos de celebração! 🎉
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Nossos <span className="text-primary">Serviços</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Oferecemos decorações completas para todos os tipos de celebração! 🎉
+            </p>
+          </div>
+        </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className={`group relative rounded-3xl overflow-hidden ${service.bgColor} border border-border p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}
-            >
-              <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${service.color} text-primary-foreground mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
-                <service.icon size={36} />
+          {services.map((service, i) => (
+            <AnimatedCard key={service.title} delay={i * 0.15}>
+              <div className={`group relative rounded-3xl overflow-hidden ${service.bgColor} border border-border p-8 text-center hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full`}>
+                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${service.color} text-primary-foreground mb-6 group-hover:scale-110 transition-transform shadow-lg`}>
+                  <service.icon size={36} />
+                </div>
+                <h3 className="font-display text-xl font-bold text-card-foreground mb-3">{service.title}</h3>
+                <p className="text-muted-foreground mb-6">{service.description}</p>
+                <button
+                  onClick={() => window.open("https://bit.ly/38Dw4RG", "_blank")}
+                  className="text-primary font-display font-semibold hover:underline"
+                >
+                  Saiba mais →
+                </button>
               </div>
-              <h3 className="font-display text-xl font-bold text-card-foreground mb-3">{service.title}</h3>
-              <p className="text-muted-foreground mb-6">{service.description}</p>
-              <button
-                onClick={() => window.open("https://bit.ly/38Dw4RG", "_blank")}
-                className="text-primary font-display font-semibold hover:underline"
-              >
-                Saiba mais →
-              </button>
-            </div>
+            </AnimatedCard>
           ))}
         </div>
       </div>

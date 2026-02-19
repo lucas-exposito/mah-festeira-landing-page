@@ -7,10 +7,12 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import NavBar from "@/components/NavBar";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <NavBar />
       <HeroSection />
       <AboutSection />
       <ServicesSection />

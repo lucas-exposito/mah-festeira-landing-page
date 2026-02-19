@@ -1,5 +1,6 @@
 import { Star, Quote } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { AnimatedSection } from "@/components/AnimatedSection";
 
 const testimonials = [
   { name: "Ana Paula", event: "Aniversário Infantil", text: "A Mah é incrível! Fez a festa do meu filho e ficou tudo perfeito. Superou todas as expectativas! 🎈", stars: 5 },
@@ -12,36 +13,40 @@ const TestimonialsSection = () => {
   return (
     <section id="depoimentos" className="py-20 px-4 bg-background">
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-            O que nossos <span className="text-primary">clientes</span> dizem
-          </h2>
-          <p className="text-muted-foreground text-lg">
-            Festas que encantam e clientes que recomendam! 💖
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+              O que nossos <span className="text-primary">clientes</span> dizem
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Festas que encantam e clientes que recomendam! 💖
+            </p>
+          </div>
+        </AnimatedSection>
 
-        <Carousel opts={{ loop: true }} className="mx-auto">
-          <CarouselContent>
-            {testimonials.map((t, i) => (
-              <CarouselItem key={i} className="md:basis-1/2">
-                <div className="bg-card rounded-3xl border border-border p-8 mx-2 h-full flex flex-col">
-                  <Quote size={32} className="text-primary/30 mb-4" />
-                  <p className="text-card-foreground mb-6 flex-1 italic leading-relaxed">"{t.text}"</p>
-                  <div className="flex items-center gap-1 mb-2">
-                    {[...Array(t.stars)].map((_, j) => (
-                      <Star key={j} size={16} className="text-festa-yellow fill-festa-yellow" />
-                    ))}
+        <AnimatedSection delay={0.2}>
+          <Carousel opts={{ loop: true }} className="mx-auto">
+            <CarouselContent>
+              {testimonials.map((t, i) => (
+                <CarouselItem key={i} className="md:basis-1/2">
+                  <div className="bg-card rounded-3xl border border-border p-8 mx-2 h-full flex flex-col">
+                    <Quote size={32} className="text-primary/30 mb-4" />
+                    <p className="text-card-foreground mb-6 flex-1 italic leading-relaxed">"{t.text}"</p>
+                    <div className="flex items-center gap-1 mb-2">
+                      {[...Array(t.stars)].map((_, j) => (
+                        <Star key={j} size={16} className="text-festa-yellow fill-festa-yellow" />
+                      ))}
+                    </div>
+                    <p className="font-display font-bold text-card-foreground">{t.name}</p>
+                    <p className="text-muted-foreground text-sm">{t.event}</p>
                   </div>
-                  <p className="font-display font-bold text-card-foreground">{t.name}</p>
-                  <p className="text-muted-foreground text-sm">{t.event}</p>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="-left-4 md:-left-12" />
-          <CarouselNext className="-right-4 md:-right-12" />
-        </Carousel>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4 md:-left-12" />
+            <CarouselNext className="-right-4 md:-right-12" />
+          </Carousel>
+        </AnimatedSection>
       </div>
     </section>
   );

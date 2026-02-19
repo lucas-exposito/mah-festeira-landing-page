@@ -4,6 +4,7 @@ import ServicesSection from "@/components/ServicesSection";
 import GallerySection from "@/components/GallerySection";
 import PackagesSection from "@/components/PackagesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import ContactSection from "@/components/ContactSection";
 import FooterSection from "@/components/FooterSection";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -16,6 +17,7 @@ const Index = () => {
       <GallerySection />
       <PackagesSection />
       <TestimonialsSection />
+      <ContactSection />
       <FooterSection />
       <WhatsAppButton />
     </main>
@@ -23,3 +25,4 @@ const Index = () => {
 };
 
 export default Index;
+

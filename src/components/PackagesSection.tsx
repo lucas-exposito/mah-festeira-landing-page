@@ -216,7 +216,12 @@ const PackagesSection = () => {
 
                 <Button
                   className="w-full rounded-full font-display font-semibold py-6 text-base"
-                  onClick={() => window.open("https://bit.ly/38Dw4RG", "_blank")}
+                  onClick={() => {
+                    const msg = encodeURIComponent(
+                      `Olá! 😊 Tenho interesse no *Pacote ${selectedPkg.name}* (${selectedPkg.price}). Gostaria de mais informações e verificar disponibilidade para minha festa. Obrigado(a)!`
+                    );
+                    window.open(`https://wa.me/5511940809869?text=${msg}`, "_blank");
+                  }}
                 >
                   Quero o Pacote {selectedPkg.name}
                 </Button>

@@ -1,18 +1,20 @@
-import { Camera } from "lucide-react";
 import { AnimatedSection, AnimatedCard } from "@/components/AnimatedSection";
 
-const placeholders = Array.from({ length: 6 }, (_, i) => ({
-  id: i + 1,
-  color: [
-    "from-festa-pink/30 to-festa-orange/30",
-    "from-festa-lilac/30 to-festa-blue/30",
-    "from-festa-yellow/30 to-festa-green/30",
-    "from-festa-blue/30 to-festa-lilac/30",
-    "from-festa-orange/30 to-festa-pink/30",
-    "from-festa-green/30 to-festa-yellow/30",
-  ][i],
-  label: ["Festa Infantil", "Aniversário Adulto", "Chá de Bebê", "Festa Temática", "Decoração Completa", "Mesa de Doces"][i],
-}));
+import galeriaFestaInfantil from "@/assets/galeria-festa-infantil.jpg";
+import galeriaAniversarioAdulto from "@/assets/galeria-aniversario-adulto.jpg";
+import galeriaChaBebe from "@/assets/galeria-cha-bebe.jpg";
+import galeriaFestaTematica from "@/assets/galeria-festa-tematica.jpg";
+import galeriaDecoracaoCompleta from "@/assets/galeria-decoracao-completa.jpg";
+import galeriaMesaDoces from "@/assets/galeria-mesa-doces.jpg";
+
+const galleryItems = [
+  { id: 1, image: galeriaFestaInfantil, label: "Festa Infantil" },
+  { id: 2, image: galeriaAniversarioAdulto, label: "Aniversário Adulto" },
+  { id: 3, image: galeriaChaBebe, label: "Chá de Bebê" },
+  { id: 4, image: galeriaFestaTematica, label: "Festa Temática" },
+  { id: 5, image: galeriaDecoracaoCompleta, label: "Decoração Completa" },
+  { id: 6, image: galeriaMesaDoces, label: "Mesa de Doces" },
+];
 
 const GallerySection = () => {
   return (
@@ -30,17 +32,16 @@ const GallerySection = () => {
         </AnimatedSection>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {placeholders.map((item, i) => (
+          {galleryItems.map((item, i) => (
             <AnimatedCard key={item.id} delay={i * 0.08}>
-              <div
-                className={`group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br ${item.color} border border-border hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer`}
-              >
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 text-muted-foreground">
-                  <Camera size={40} className="opacity-40" />
-                  <span className="font-display font-medium text-sm opacity-60">{item.label}</span>
-                  <span className="text-xs opacity-40">Foto em breve</span>
-                </div>
-                <div className="absolute inset-0 bg-foreground/0 group-hover:bg-foreground/10 transition-colors flex items-end p-4 opacity-0 group-hover:opacity-100">
+              <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-border hover:shadow-xl transition-all duration-300 hover:scale-[1.02] cursor-pointer">
+                <img
+                  src={item.image}
+                  alt={item.label}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <span className="font-display text-sm font-semibold text-primary-foreground bg-primary/80 rounded-full px-3 py-1">
                     {item.label}
                   </span>

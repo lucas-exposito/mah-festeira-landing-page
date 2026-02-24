@@ -1,5 +1,6 @@
 import { PartyPopper, Sparkles, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
   return (
@@ -81,6 +82,22 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <button
+        onClick={() => document.getElementById("sobre")?.scrollIntoView({ behavior: "smooth" })}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+        aria-label="Rolar para baixo"
+      >
+        <span className="font-display text-xs font-medium tracking-widest uppercase opacity-60">Scroll</span>
+        <div className="w-6 h-10 rounded-full border-2 border-current flex items-start justify-center p-1.5">
+          <motion.div
+            className="w-1.5 h-1.5 rounded-full bg-current"
+            animate={{ y: [0, 16, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+      </button>
     </section>
   );
 };
